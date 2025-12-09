@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --maxw: 1120px; }
+html, body { height: 100%; }
+body {
+  color: theme(colors.ink);
+  background:
+    radial-gradient(900px 480px at 110% -10%, rgba(245, 158, 11, .10), transparent 55%),
+    radial-gradient(800px 420px at -10% 110%, rgba(14, 165, 164, .10), transparent 55%),
+    theme(colors.bg);
+}
+.container { max-width: var(--maxw); margin-inline: auto; padding-inline: 1rem; }
+.card { background: theme(colors.card); border: 1px solid theme(colors.line); border-radius: 1rem; box-shadow: theme(boxShadow.soft); }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f5f5f5;
+    background:
+      radial-gradient(900px 500px at 110% -10%, rgba(245, 158, 11, .18), transparent 55%),
+      radial-gradient(900px 500px at -10% 110%, rgba(14, 165, 164, .16), transparent 55%),
+      #0b0b0c;
+  }
+  .card { background: #111214; border-color: #1f2328; }
+}

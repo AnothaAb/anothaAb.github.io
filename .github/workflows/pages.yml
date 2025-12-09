@@ -20,9 +20,8 @@ jobs:
           node-version: "20"
           cache: "npm"
       - run: npm ci
-      - run: npm run build
-      - run: npm run export
-      - run: touch out/.nojekyll
+      - run: npm run build        # <-- only build; export is handled by output:"export"
+      - run: touch out/.nojekyll  # Next writes to out/ when output:"export" is set
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
